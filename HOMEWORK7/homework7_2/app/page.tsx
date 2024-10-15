@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function Page() {
    return (
       <section
@@ -22,19 +23,19 @@ export default function Page() {
                </p>
 
                <div className="mt-8 flex flex-wrap gap-4 text-center">
-                  <a
-                     href="#"
+                  <Link
+                     href="/products"
                      className="block w-full rounded bg-[#775b45] px-12 py-3 text-sm font-medium text-white shadow hover:bg-[#bca890] focus:outline-none focus:ring active:bg-[#bca890] sm:w-auto"
                   >
                      Get Started
-                  </a>
+                  </Link>
 
-                  <a
+                  <Link
                      href="#"
                      className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-[#775b45] shadow hover:text-[#bca890]] focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
                   >
                      Learn More
-                  </a>
+                  </Link>
                </div>
             </div>
          </div>
