@@ -1,5 +1,6 @@
 'use client'
 import { useState } from "react";
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 
 export default function Product() {
    const [name, setName] = useState('');
@@ -70,7 +71,30 @@ export default function Product() {
             <ul className="my-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                {products.map((item) =>
                   <li key={item.id}>
-                     <a href="#" className="shadow-xl group block overflow-hidden rounded-3xl">
+                     <a href="#" className="relative shadow-xl group block overflow-hidden rounded-3xl bg-black">
+                        <Menu as="div" className="absolute end-0 z-10 mt-2 w-56 m-3">
+                           <div className="absolute end-0">
+                              <MenuButton className=" rounded-full bg-white p-2 text-center shadow-sm  hover:bg-gray-200">
+                              <svg width={20} height={20} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6C12.5523 6 13 5.55228 13 5Z" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13C12.5523 13 13 12.5523 13 12Z" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20C12.5523 20 13 19.5523 13 19Z" stroke="#7a7a7a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                              </MenuButton>
+                           </div>
+
+                           <MenuItems transition className="absolute top-8 right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in">
+                              <div className="py-1">
+                                 <MenuItem>
+                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-gray-900">
+                                       Edit Product
+                                    </a>
+                                 </MenuItem>
+                                 <MenuItem>
+                                    <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:text-red-600">
+                                       Delete Product
+                                    </a>
+                                 </MenuItem>
+                              </div>
+                           </MenuItems>
+
+                        </Menu>
                         <img src={item.image_url} alt="product_image" className="h-[350px] w-full object-cover transition duration-100 group-hover:scale-110 sm:h-[350px]" />
                         <div className="py-5 px-[3em] relative bg-white pt-3">
                            <h3 className="text-lg text-gray-700 group-hover:underline group-hover:underline-offset-4">{item.name}</h3>
