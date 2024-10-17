@@ -101,7 +101,7 @@ export default function Product() {
                   </div>
 
                   <div className=" rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-                     <form onSubmit={(e) => { e.preventDefault();}} className="space-y-4">
+                     <form onSubmit={(e) => { e.preventDefault(); }} className="space-y-4">
                         <div>
                            <input
                               className="w-full rounded-lg border border-gray-200 p-3 text-sm"
